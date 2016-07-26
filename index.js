@@ -29,11 +29,11 @@ class BytesField extends NumberField {
 BytesField.views = {
   cell: {
     name: 'BytesFieldCell',
-    field: __dirname + '/lib/cell.js'
+    path: __dirname + '/lib/cell.js'
   },
   view: {
     name: 'BytesFieldView',
-    field: __dirname + '/lib/view.js'
+    path: __dirname + '/lib/view.js'
   }
 };
 
