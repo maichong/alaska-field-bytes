@@ -9,16 +9,18 @@ import numeral from 'numeral';
 import _round from 'lodash/round';
 import { shallowEqual } from 'alaska-admin-view';
 
+const { bool, object, any, func, string } = React.PropTypes;
+
 export default class BytesFieldView extends React.Component {
 
   static propTypes = {
-    value: React.PropTypes.any,
-    model: React.PropTypes.object,
-    data: React.PropTypes.object,
-    field: React.PropTypes.object,
-    disabled: React.PropTypes.bool,
-    errorText: React.PropTypes.string,
-    onChange: React.PropTypes.func,
+    value: any,
+    model: object,
+    data: object,
+    field: object,
+    disabled: bool,
+    errorText: string,
+    onChange: func,
   };
 
 
@@ -79,7 +81,7 @@ export default class BytesFieldView extends React.Component {
       model
       } = this.props;
     let { help, unit, size, precision } = field;
-    let className = 'form-group';
+    let className = 'form-group bytes-field';
     if (errorText) {
       className += ' has-error';
       help = errorText;
